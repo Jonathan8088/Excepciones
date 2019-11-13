@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Excepciones</title>
+    </h:head>
+    <h:body>
+        <h:form id="formulario">
+
+            <h:panelGrid columns="2" >
+
+                <p:outputLabel value="Usuario: " />
+                <p:inputText value="#{logica.cliente.usuario}" />
+
+                <p:outputLabel value="Contraseña: " />
+                <p:inputText value="#{logica.cliente.contrasena}" />
+
+                <p:outputLabel value="Confirmar contraseña: " />
+                <p:inputText value="#{logica.confirmaContrasena}" />
+
+                <p:commandButton value="Personalizada SR" action="#{logica.ExcepcionPersonalizadaSR(logica.cliente, logica.confirmaContrasena)}"/>
+                <p:commandButton value="Personalizada CR" action="#{logica.ExcepcionPersonalizadaCR(logica.cliente,logica.confirmaContrasena)}" />
+                <p:commandButton value="Java SR" action="#{logica.ExcepcionJavaSR(logica.cliente, logica.confirmaContrasena)}"/>
+                <p:commandButton value="Java CR" action="#{logica.ExcepcionJavaCR(logica.cliente, logica.confirmaContrasena)}"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
